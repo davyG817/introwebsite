@@ -1,13 +1,61 @@
-<html>
-    <body>
-        <h1>
-            My first Website
-        </h1>
-        <h3>
-            by Davis
-        </h3>
-        <p>
-            This is a project for my graphics programing class
-        </p>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h3 {
+            color: #666;
+            text-align: center;
+        }
+
+        p {
+            color: #888;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Website</h1>
+    <h3>by Davis</h3>
+    <p>This is a new project.</p>
+
+   
+    <p id="currentTime"></p>
+
+ 
+    <script>
+        // Function to update time every second
+        function updateTime() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+            // Format time with leading zeros
+            var formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            // Update the paragraph content with the current time
+            document.getElementById('currentTime').textContent = `Current Time: ${formattedTime}`;
+        }
+
+        // Call updateTime function initially
+        updateTime();
+        // Update time every second
+        setInterval(updateTime, 1000);
+    </script>
+</body>
 </html>
